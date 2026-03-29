@@ -1,0 +1,170 @@
+/* ═══════════════════════════════════════════════════════════
+   BAIREES Global Advisory — Sidebar.css
+   Minimal Lines Design – Overlay on Hover
+   Color Palette: Metallic Gold · White · #0B0F2B
+═══════════════════════════════════════════════════════════ */
+
+/* ── Sidebar Container ── */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 12px;
+  background: transparent;
+  z-index: 9999;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: visible;
+}
+
+.sidebar:hover {
+  width: 320px;
+  background: linear-gradient(180deg, rgba(11, 15, 43, 0.98) 0%, rgba(6, 8, 26, 0.96) 100%);
+  backdrop-filter: blur(20px);
+  border-right: 2px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 
+    10px 0 80px rgba(0, 0, 0, 0.7),
+    inset 0 0 60px rgba(212, 175, 55, 0.08);
+}
+
+.sidebar-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+}
+
+/* ── Menu ── */
+.sidebar-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 20px;
+  overflow-y: auto;
+}
+
+.sidebar-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 48px;
+  text-decoration: none;
+  overflow: visible;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* The Line (Always Visible) */
+.link-line {
+  position: relative;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.6) 100%);
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.sidebar:hover .link-line {
+  width: 60px;
+  background: linear-gradient(90deg, #FFD700 0%, #D4AF37 100%);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+.sidebar-link.active .link-line {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700 0%, #D4AF37 100%);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+}
+
+/* Text (Hidden by Default) */
+.link-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  white-space: nowrap;
+  position: absolute;
+  left: 70px;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar:hover .link-text {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.15s;
+}
+
+.sidebar-link.active .link-text {
+  color: #FFD700;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+/* Animated Underline (Appears on Hover) */
+.link-underline {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #FFD700 50%, transparent 100%);
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+.sidebar-link:hover .link-underline {
+  width: 100%;
+}
+
+.sidebar-link.active .link-underline {
+  width: 100%;
+}
+
+/* Hover Effect on Line */
+.sidebar-link:hover .link-line {
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700 0%, #D4AF37 100%);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+}
+
+/* ── Scrollbar ── */
+.sidebar-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 2px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.8);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .sidebar:hover {
+    width: 280px;
+  }
+
+  .link-text {
+    font-size: 1rem;
+    left: 65px;
+  }
+
+  .sidebar-link:hover .link-line {
+    width: 60px;
+  }
+}

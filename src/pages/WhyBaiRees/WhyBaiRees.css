@@ -1,0 +1,232 @@
+/* ═══════════════════════════════════════════════════════════
+   BAIREES Global Advisory — WhyBaiRees.css
+   Color Palette: Metallic Gold · White · #0B0F2B
+═══════════════════════════════════════════════════════════ */
+
+.why-section {
+  padding: 100px 24px;
+  background: linear-gradient(135deg, #0B0F2B 0%, #0d1235 50%, #06081a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background pattern */
+.why-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1400px;  /* Increased from 1200px */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* ── Header ── */
+.why-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  letter-spacing: 0.02em;
+}
+
+.section-title .gold-gradient {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #F2D492 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 30px rgba(212, 175, 55, 0.5);
+}
+
+.section-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Cards Grid ── */
+.why-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);  /* Force 4 columns */
+  gap: 30px;
+  width: 100%;
+}
+
+.why-card {
+  background: rgba(11, 15, 43, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 40px 32px;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+  opacity: 1 !important;  /* Force visibility */
+  visibility: visible !important;
+  display: block !important;
+  min-width: 0;  /* Prevent overflow */
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700 0%, #D4AF37 50%, #FFD700 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  border-color: #D4AF37;
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
+  background: rgba(11, 15, 43, 0.75);
+}
+
+.why-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ── Icon Wrapper ── */
+.why-icon-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 24px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-check-icon {
+  position: absolute;
+  font-size: 4.5rem;
+  color: rgba(212, 175, 55, 0.08);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.why-icon {
+  position: relative;
+  font-size: 2.2rem;
+  color: #FFD700;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(255, 215, 0, 0.1) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.35);
+  border-radius: 14px;
+  width: 72px;
+  height: 72px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.why-card:hover .why-icon {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  border-color: #FFD700;
+  color: #0B0F2B;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+/* ── Card Content ── */
+.why-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+.why-description {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .why-section {
+    padding: 80px 20px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;  /* 1 column on mobile */
+    gap: 24px;
+  }
+
+  .why-card {
+    padding: 32px 24px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+  }
+
+  .why-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 1.8rem;
+  }
+
+  .why-check-icon {
+    font-size: 4rem;
+  }
+
+  .why-title {
+    font-size: 1.2rem;
+  }
+
+  .why-description {
+    font-size: 0.9rem;
+  }
+}

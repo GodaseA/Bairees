@@ -1,0 +1,265 @@
+/* ============================================
+   ABOUT SECTION — LIGHT SKY BLUE THEME
+   ONLY TITLE FONT CHANGED to Cinzel
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --sky-100: #e0f4ff;
+  --sky-200: #bae6fd;
+  --sky-300: #7dd3fc;
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
+  --sky-600: #0284c7;
+  --sky-deep: #0c4a6e;
+  --sky-mist: rgba(224, 244, 255, 0.72);
+  --sky-glass: rgba(255, 255, 255, 0.55);
+  --sky-glass-border: rgba(186, 230, 253, 0.6);
+  --text-primary: #0c3a52;
+  --text-secondary: #1e6a8a;
+  --text-muted: #4a9ab5;
+  --white-pure: #ffffff;
+  --shadow-sky: 0 8px 32px rgba(14, 165, 233, 0.15);
+  --shadow-deep: 0 20px 60px rgba(12, 74, 110, 0.2);
+}
+
+/* ---- SECTION BASE (UNCHANGED) ---- */
+.about-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ---- BACKGROUND CAROUSEL OVERLAY (UNCHANGED) ---- */
+.about-overlay-light {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(224, 244, 255, 0.88) 0%,
+    rgba(186, 230, 253, 0.80) 35%,
+    rgba(125, 211, 252, 0.65) 65%,
+    rgba(14, 165, 233, 0.45) 100%
+  );
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.about-overlay-light::before,
+.about-overlay-light::after {
+  /* Orbs unchanged */
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+/* ---- CONTAINER (UNCHANGED) ---- */
+.about-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 48px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* ---- HEADER (ONLY TITLE FONT CHANGED) ---- */
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.about-title-light {
+  font-family: 'Cinzel', serif; /* ONLY CHANGE: Elegant BAIREES Font */
+  font-size: clamp(3.2rem, 7vw, 5rem);
+  font-weight: 600;
+  background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(30, 64, 175, 0.3);
+  position: relative;
+}
+
+.about-title-light span {
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(135deg, #D4AF37, #FAD02C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-title-light::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 4px;
+  background: linear-gradient(90deg, #D4AF37, #FAD02C);
+  border-radius: 2px;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+}
+
+.about-icon-light {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #1E40AF, #3B82F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 8px 24px rgba(30, 64, 175, 0.4));
+  flex-shrink: 0;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+.about-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--sky-300), transparent);
+  margin-left: 12px;
+}
+
+/* ---- REST OF SECTION (COMPLETELY UNCHANGED) ---- */
+.about-narrative {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.about-text-light {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 24px 28px;
+  background: var(--sky-glass);
+  border: 1px solid var(--sky-glass-border);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-sky);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+  font-weight: 300;
+  margin: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.about-text-light:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(14, 165, 233, 0.22);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.text-icon-light {
+  font-size: 1.4rem;
+  color: var(--sky-500);
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: color 0.3s ease;
+}
+
+.about-text-light:hover .text-icon-light {
+  color: var(--sky-600);
+}
+
+.about-stats {
+  display: flex;
+  gap: 24px;
+}
+
+.stat-card-light {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 32px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(224, 244, 255, 0.65) 100%
+  );
+  border: 1px solid var(--sky-glass-border);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-sky), inset 0 1px 0 rgba(255,255,255,0.8);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease;
+  cursor: default;
+}
+
+.stat-card-light:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-deep), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.stat-icon-container {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--sky-200), var(--sky-300));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.25);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.stat-card-light:hover .stat-icon-container {
+  background: linear-gradient(135deg, var(--sky-300), var(--sky-400));
+  transform: rotate(-5deg) scale(1.08);
+}
+
+.stat-icon-light {
+  font-size: 1.5rem;
+  color: var(--sky-deep);
+}
+
+.stat-card-light h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 2px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stat-card-light p {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ---- RESPONSIVE (UNCHANGED) ---- */
+@media (max-width: 900px) {
+  .about-narrative { grid-template-columns: 1fr; }
+  .about-stats { flex-direction: column; }
+  .about-container { padding: 80px 28px 60px; }
+}
+
+@media (max-width: 560px) {
+  .about-title-light { font-size: 2.4rem; }
+  .about-header { flex-wrap: wrap; }
+  .about-title-light::after { width: 100px; bottom: -12px; }
+}

@@ -1,0 +1,313 @@
+/* ═══════════════════════════════════════════════════════════
+   BAIREES Global Advisory — Architecture.css
+   Color Palette: Metallic Gold · White
+═══════════════════════════════════════════════════════════ */
+
+.architecture-section {
+  position: relative;
+  padding: 100px 24px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   /* Background removed - now universal in index.css */
+}
+
+.architecture-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1350px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ── TITLE ── */
+.architecture-title-dark {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+}
+
+.architecture-title-dark::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700 0%, #D4AF37 50%, #FFD700 100%);
+  margin: 20px auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
+
+/* ── SUBTITLE ── */
+.architecture-subtitle-dark {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 900px;
+  margin: 0 auto 60px;
+  line-height: 1.8;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+}
+
+.pillar-count-dark {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #FFD700;
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+/* ── GRID LAYOUT ── */
+.architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+  margin: 0 auto;
+}
+
+/* ── CARDS ── */
+.architecture-card-dark {
+  position: relative;
+  padding: 35px 30px;
+  background: rgba(11, 15, 43, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.architecture-card-dark:nth-child(1) { animation-delay: 0.1s; }
+.architecture-card-dark:nth-child(2) { animation-delay: 0.2s; }
+.architecture-card-dark:nth-child(3) { animation-delay: 0.3s; }
+.architecture-card-dark:nth-child(4) { animation-delay: 0.4s; }
+.architecture-card-dark:nth-child(5) { animation-delay: 0.5s; }
+.architecture-card-dark:nth-child(6) { animation-delay: 0.6s; }
+
+.architecture-card-dark:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #D4AF37;
+  background: rgba(11, 15, 43, 0.8);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3), 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ── ICON ── */
+.card-icon-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(255, 215, 0, 0.1) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.35);
+  border-radius: 12px;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.architecture-card-dark:hover .card-icon-dark {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(255, 215, 0, 0.2) 100%);
+  border-color: #FFD700;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.icon-dark {
+  font-size: 2rem;
+  color: #FFD700;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.architecture-card-dark:hover .icon-dark {
+  transform: scale(1.15);
+}
+
+/* ── CARD TITLE ── */
+.architecture-card-dark h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+/* ── CARD DESCRIPTION ── */
+.architecture-card-dark p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── DECORATIVE CORNERS ── */
+.architecture-card-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  border-top: 2px solid #D4AF37;
+  border-left: 2px solid #D4AF37;
+  border-radius: 12px 0 0 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.architecture-card-dark::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35px;
+  height: 35px;
+  border-bottom: 2px solid #D4AF37;
+  border-right: 2px solid #D4AF37;
+  border-radius: 0 0 12px 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.architecture-card-dark:hover::before,
+.architecture-card-dark:hover::after {
+  opacity: 1;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .architecture-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .architecture-card-dark {
+    padding: 30px 26px;
+  }
+
+  .card-icon-dark {
+    width: 65px;
+    height: 65px;
+  }
+
+  .icon-dark {
+    font-size: 1.85rem;
+  }
+
+  .architecture-card-dark h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .architecture-section {
+    padding: 80px 20px;
+  }
+
+  .architecture-title-dark {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 20px;
+  }
+
+  .architecture-subtitle-dark {
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    margin-bottom: 45px;
+  }
+
+  .architecture-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .architecture-card-dark {
+    padding: 28px 24px;
+  }
+
+  .card-icon-dark {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 20px;
+  }
+
+  .icon-dark {
+    font-size: 1.75rem;
+  }
+
+  .architecture-card-dark h3 {
+    font-size: 1.35rem;
+  }
+
+  .architecture-card-dark p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .architecture-section {
+    padding: 60px 16px;
+  }
+
+  .architecture-title-dark {
+    font-size: 1.7rem;
+  }
+
+  .architecture-subtitle-dark {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .architecture-card-dark {
+    padding: 26px 22px;
+  }
+
+  .card-icon-dark {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 18px;
+  }
+
+  .icon-dark {
+    font-size: 1.65rem;
+  }
+
+  .architecture-card-dark h3 {
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+  }
+
+  .architecture-card-dark p {
+    font-size: 0.9rem;
+  }
+}
