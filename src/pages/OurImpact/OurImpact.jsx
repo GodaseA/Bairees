@@ -1,30 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
 import { FaChartLine, FaDollarSign, FaRocket, FaSyncAlt } from "react-icons/fa";
 import "./OurImpact.css";
 import bg_img from "../../assets/Architechure2.jpg";
 
 const OurImpact = () => {
-  const sectionRef = useRef(null);
-  const statRefs = useRef([]);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      statRefs.current.forEach((stat, index) => {
-        if (stat) {
-          gsap.from(stat, {
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            delay: index * 0.15,
-            ease: "power3.out",
-          });
-        }
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+   
 
   const impacts = [
     {
@@ -54,7 +33,7 @@ const OurImpact = () => {
   ];
 
   return (
-    <section className="impact-section" ref={sectionRef}>
+    <section id="insights" className="impact-section"  >
       {/* Background Image */}
       <div 
         className="impact-background"
@@ -81,8 +60,7 @@ const OurImpact = () => {
             <div
               key={index}
               className="impact-card"
-              ref={(el) => (statRefs.current[index] = el)}
-            >
+             >
               <div className="impact-icon-wrapper" style={{ color: impact.color }}>
                 {impact.icon}
               </div>

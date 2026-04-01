@@ -69,7 +69,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero" ref={heroRef}>
+    <section id="hero" className="hero" ref={heroRef}>
       {/* Background Video */}
       <video
         className="hero-video"
@@ -103,7 +103,7 @@ const Hero = () => {
               <FiGlobe className="card-icon" />
             </div>
             <div className="card-content">
-              <h3 className="card-stat">20+</h3>
+              <h3 className="card-stat">25+</h3>
               <p className="card-label">Years Global Experience</p>
             </div>
           </div>
@@ -124,7 +124,7 @@ const Hero = () => {
             </div>
             <div className="card-content">
               <h3 className="card-stat">Global</h3>
-              <p className="card-label">USA | Europe | APAC</p>
+              <p className="card-label"> USA | Europe | Australia | India</p>
             </div>
           </div>
         </div>

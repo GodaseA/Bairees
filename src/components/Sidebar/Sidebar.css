@@ -2,6 +2,7 @@
    BAIREES Global Advisory — Sidebar.css
    Minimal Lines Design – Overlay on Hover
    Color Palette: Metallic Gold · White · #0B0F2B
+   Features: Round Logo + Active Section Highlight
 ═══════════════════════════════════════════════════════════ */
 
 /* ── Sidebar Container ── */
@@ -31,7 +32,53 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 40px 0;
+  padding: 30px 0 40px;
+}
+
+/* ── Logo Section ── */
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.1s;
+}
+
+.sidebar:hover .sidebar-logo {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.logo-link {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 215, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.logo-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gold hover effect on logo */
+.logo-link:hover {
+  border-color: #FFD700;
+  box-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.6),
+    0 0 60px rgba(255, 215, 0, 0.3),
+    inset 0 0 20px rgba(255, 215, 0, 0.2);
+  transform: scale(1.08);
 }
 
 /* ── Menu ── */
@@ -74,11 +121,21 @@
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
 }
 
+/* ACTIVE SECTION - Scale Up + Brighter */
 .sidebar-link.active .link-line {
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, #FFD700 0%, #D4AF37 100%);
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+  width: 40px;
+  height: 5px;
+  background: linear-gradient(90deg, #FFD700 0%, #ffffff 50%, #D4AF37 100%);
+  box-shadow: 
+    0 0 35px rgba(255, 215, 0, 1),
+    0 0 60px rgba(255, 215, 0, 0.6),
+    0 0 80px rgba(255, 215, 0, 0.3);
+  transform: scale(1.15);
+  filter: brightness(1.3);
+}
+
+.sidebar-link.active {
+  transform: translateX(5px);
 }
 
 /* Text (Hidden by Default) */
@@ -104,7 +161,11 @@
 
 .sidebar-link.active .link-text {
   color: #FFD700;
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  font-weight: 700;
+  text-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.5),
+    0 0 40px rgba(255, 215, 0, 0.3);
+  letter-spacing: 0.05em;
 }
 
 /* Animated Underline (Appears on Hover) */
@@ -125,6 +186,8 @@
 
 .sidebar-link.active .link-underline {
   width: 100%;
+  background: linear-gradient(90deg, transparent 0%, #FFD700 50%, #ffffff 100%);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
 }
 
 /* Hover Effect on Line */
@@ -159,6 +222,11 @@
     width: 280px;
   }
 
+  .logo-link {
+    width: 80px;
+    height: 80px;
+  }
+
   .link-text {
     font-size: 1rem;
     left: 65px;
@@ -166,5 +234,9 @@
 
   .sidebar-link:hover .link-line {
     width: 60px;
+  }
+
+  .sidebar-link.active .link-line {
+    width: 70px;
   }
 }

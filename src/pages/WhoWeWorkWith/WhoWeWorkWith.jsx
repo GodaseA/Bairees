@@ -4,26 +4,8 @@ import { FaBusinessTime, FaCog, FaHandshake, FaBuilding } from "react-icons/fa";
 import "./WhoWeWorkWith.css";
 
 const WhoWeWorkWith = () => {
-  const sectionRef = useRef(null);
-  const cardRefs = useRef([]);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      cardRefs.current.forEach((card, index) => {
-        if (card) {
-          gsap.from(card, {
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            delay: index * 0.15,
-            ease: "power3.out",
-          });
-        }
-      });
-    }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
 
   const clients = [
     {
@@ -49,7 +31,7 @@ const WhoWeWorkWith = () => {
   ];
 
   return (
-    <section className="clients-section" ref={sectionRef}>
+    <section className="clients-section"  >
       <div className="container">
         {/* Header */}
         <div className="clients-header">
@@ -64,7 +46,6 @@ const WhoWeWorkWith = () => {
             <div
               key={index}
               className="clients-card"
-              ref={(el) => (cardRefs.current[index] = el)}
             >
               <div className="clients-icon-wrapper">{client.icon}</div>
               <h3 className="clients-title">{client.title}</h3>

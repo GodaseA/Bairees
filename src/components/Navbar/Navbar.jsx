@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Navbar.css";
@@ -7,57 +7,85 @@ import logo from "../../assets/logo.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Navbar = () => {
+const Navbar = ({ setSidebarOpen }) => {
   const navbarRef = useRef(null);
-  const navMidRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hide middle nav links on scroll
-      gsap.to(navMidRef.current, {
+      // Navbar background on scroll
+      gsap.to(navbarRef.current, {
         scrollTrigger: {
           trigger: document.body,
           start: "top top",
-          end: "+=120",
+          end: "+=100",
           scrub: true,
-          toggleActions: "play none none reverse",
         },
-        opacity: 0,
-        x: -30,
-        pointerEvents: "none",
-        duration: 0.4,
-        ease: "power2.out",
+        backgroundColor: "rgba(11, 15, 43, 0.98)",
+        backdropFilter: "blur(16px)",
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.4)",
+        duration: 0.3,
       });
     }, navbarRef);
 
-    return () => ctx.revert();
+    // Scroll hide/show logic
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const navbarHeight = navbarRef.current?.offsetHeight || 120;
+
+      // Hide on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY.current && currentScrollY > navbarHeight) {
+        // Scrolling DOWN
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY.current) {
+        // Scrolling UP
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      ctx.revert();
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  return (
-    <nav className="navbar" ref={navbarRef}>
-      <button className="menu-btn">
-        <FaBars />
-      </button>
+  const handleMenuClick = () => {
+    setSidebarOpen?.(true);
+  };
 
-      <div className="nav--left">
+  return (
+    <nav 
+      className={`navbar ${isVisible ? "navbar-visible" : "navbar-hidden"}`} 
+      ref={navbarRef}
+    >
+      {/* Left: Menu + Logo */}
+      <div className="nav-left">
+        {/* <button className="menu-btn" onClick={handleMenuClick} aria-label="Open menu">
+          <FaBars />
+        </button> */}
+
         <a href="/" className="nav-logo">
           <img src={logo} alt="BaiRees Global Advisory" />
         </a>
-        <a href="/">
+      </div>
+
+      {/* Center: Brand Title (Gold) */}
+      <div className="nav-center">
+        <a href="/" className="nav-brand">
           <h2>BaiRees</h2>
+          <h3>Global Technology Advisory</h3>
         </a>
       </div>
 
-      <div className="nav-mid" ref={navMidRef}>
-        <a href="#services">Services</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#founder">Founder</a>
-        <a href="#about">About</a>
-      </div>
-
+      {/* Right: Contact Button */}
       <div className="nav-right">
         <a href="#contact">
-          <button>
+          <button className="contact-btn">
             <span>Contact</span>
           </button>
         </a>

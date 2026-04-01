@@ -1,0 +1,396 @@
+/* ═══════════════════════════════════════════════════════════
+   BAIREES Global Advisory — 7R Transformation Methodology
+   Color Palette: Metallic Gold (#FFD700, #D4AF37) · White · Navy (#0B0F2B)
+═══════════════════════════════════════════════════════════ */
+
+.seven-r-methodology {
+  padding: 120px 60px;
+  background: linear-gradient(180deg, #0B0F2B 0%, #06081A 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background pattern */
+.seven-r-methodology::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(255, 215, 0, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.methodology-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.methodology-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.methodology-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.gold-text {
+  color: #FFD700;
+  text-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.4),
+    0 0 40px rgba(255, 215, 0, 0.2);
+}
+
+.methodology-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 24px 0;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.methodology-divider {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700 0%, #D4AF37 100%);
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* ── Grid Layout ── */
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+/* ── Card ── */
+.methodology-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 20px;
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  backdrop-filter: blur(10px);
+}
+
+.methodology-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.3) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.methodology-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 215, 0, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 215, 0, 0.15),
+    inset 0 0 60px rgba(255, 215, 0, 0.03);
+}
+
+.methodology-card:hover::before {
+  opacity: 1;
+}
+
+/* Differentiator Card (Roadmap) */
+.methodology-card.differentiator {
+  border-color: rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(212, 175, 55, 0.05) 100%);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+}
+
+.methodology-card.differentiator:hover {
+  box-shadow: 
+    0 25px 80px rgba(255, 215, 0, 0.3),
+    0 0 60px rgba(255, 215, 0, 0.25);
+}
+
+/* Premium Card (Reinforce) */
+.methodology-card.premium {
+  border-color: rgba(255, 215, 0, 0.6);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(212, 175, 55, 0.08) 100%);
+}
+
+/* ── Phase Badge ── */
+.phase-badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+}
+
+.phase-number {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0B0F2B;
+}
+
+/* ── Icon ── */
+.phase-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(212, 175, 55, 0.1) 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.phase-icon svg {
+  width: 36px;
+  height: 36px;
+  color: #FFD700;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.methodology-card:hover .phase-icon {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.25) 0%, rgba(212, 175, 55, 0.15) 100%);
+  border-color: #FFD700;
+  transform: scale(1.05);
+}
+
+/* ── Content ── */
+.phase-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.badge-diff,
+.badge-premium {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.badge-diff {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  color: #0B0F2B;
+}
+
+.badge-premium {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+  color: #0B0F2B;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.phase-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+.phase-quote {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(255, 215, 0, 0.9);
+  margin: 0 0 20px 0;
+  padding: 12px 16px;
+  background: rgba(255, 215, 0, 0.08);
+  border-left: 3px solid #FFD700;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.6;
+}
+
+.phase-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.phase-points li {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 10px;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.phase-points li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #FFD700;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.phase-deliverable {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 14px 16px;
+  background: rgba(11, 15, 43, 0.6);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  line-height: 1.5;
+}
+
+.phase-deliverable strong {
+  color: #FFD700;
+}
+
+/* ── Footer ── */
+.methodology-footer {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.footer-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .seven-r-methodology {
+    padding: 100px 40px;
+  }
+
+  .methodology-title {
+    font-size: 2.8rem;
+  }
+
+  .methodology-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .seven-r-methodology {
+    padding: 80px 24px;
+  }
+
+  .methodology-title {
+    font-size: 2.2rem;
+  }
+
+  .methodology-tagline {
+    font-size: 1.1rem;
+  }
+
+  .methodology-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .phase-title {
+    font-size: 1.6rem;
+  }
+
+  .phase-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .phase-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .phase-badge {
+    width: 44px;
+    height: 44px;
+  }
+
+  .phase-number {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .seven-r-methodology {
+    padding: 60px 16px;
+  }
+
+  .methodology-title {
+    font-size: 1.8rem;
+  }
+
+  .methodology-tagline {
+    font-size: 1rem;
+  }
+
+  .methodology-card {
+    padding: 32px 24px;
+  }
+
+  .phase-title {
+    font-size: 1.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .badge-diff,
+  .badge-premium {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  .footer-text {
+    font-size: 1rem;
+  }
+}

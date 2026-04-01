@@ -5,7 +5,7 @@ import { FaQuoteLeft } from 'react-icons/fa'
 
 const Founder = () => {
   return (
-    <section className="founder-home-section">
+    <section id='founder' className="founder-home-section">
       <div className="container">
         <div className="founder-home-grid">
           <div className="founder-home-image">

@@ -103,7 +103,7 @@ function AdvisoryServices() {
   }, []);
 
   return (
-    <section id="services" className="services-section" ref={sectionRef}>
+    <section id="service" className="services-section" ref={sectionRef}>
       <h2 className="services-title">Advisory Focus Areas</h2>
 
       <div className="services-grid" role="list">

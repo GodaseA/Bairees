@@ -14,6 +14,9 @@ import WhyBaiRees from './pages/WhyBaiRees/WhyBaiRees'
 import OurImpact from './pages/OurImpact/OurImpact'
 import WhoWeWorkWith from './pages/WhoWeWorkWith/WhoWeWorkWith'
 import Sidebar from './components/Sidebar/Sidebar'
+import EmotionalHook from './pages/EmotionalHook/EmotionalHook'
+import StrategyCallButton from './components/StrategyCallButton/StrategyCallButton'
+import SevenRMethodology from './pages/SevenRMethodology/SevenRMethodology'
 
 const App = () => {
 
@@ -26,7 +29,7 @@ const App = () => {
 
     const timer = setInterval(() => {
       setShowPopup(true);
-    }, 100000); // 20 seconds
+    }, 10000); // 20 seconds
 
     return () => clearInterval(timer);
 
@@ -36,30 +39,34 @@ const App = () => {
     <>
 
 
-
+      {/* 
       <Routes>
-        {/* <Route path="/" element={<HomePage />} /> */}
-        {/* Add other routes here */}
-        {/* <Route path="/advisory" element={<Advisory />} /> */}
-        {/* <Route path="/founder" element={<Founder />} /> */}
-        {/* <Route path="/contact" element={<Contact />} /> */}
-        {/* <Route path="/insights" element={<Insights />} /> */}
-      </Routes>
+        <Route path="/" element={<HomePage />} />
+         <Route path="/architecture" element={< Architecture />} />
+        <Route path="/founder" element={<Founder />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/advisory" element={<AdvisoryServices />} />
+      </Routes> */}
+
+
       <Navbar />
       <Sidebar />
       <Hero />
       <AdvisoryServices />
       <Architecture />
-      <Founder />
+      <EmotionalHook />
       {/* <About /> */}
+      <SevenRMethodology/>
       <WhyBaiRees />
       <OurImpact />
       <WhoWeWorkWith />
+            <Founder />
       <Contact />
       <Footer />
+      <StrategyCallButton/>
 
-      {/* 
-      <ContactPopup
+
+      {/* <ContactPopup
         isOpen={showPopup}
         onClose={() => setShowPopup(false)}
         onSubmit={() => setStopPopup(true)}
