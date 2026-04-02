@@ -103,7 +103,8 @@ const Hero = () => {
               <FiGlobe className="card-icon" />
             </div>
             <div className="card-content">
-              <h3 className="card-stat">25+ Years Leading Global Digital Transformation</h3>
+              <h3 className="card-stat">25+</h3>
+              <p className="card-label">Years Global Experience</p>
             </div>
           </div>
           
@@ -112,7 +113,8 @@ const Hero = () => {
               <FiBriefcase className="card-icon" />
             </div>
             <div className="card-content">
-              <h3 className="card-stat">Trusted by Fortune 500 & High-Growth Enterprises</h3>
+              <h3 className="card-stat">500+</h3>
+              <p className="card-label">Fortune Transformations</p>
             </div>
           </div>
           
@@ -121,7 +123,8 @@ const Hero = () => {
               <FiMapPin className="card-icon" />
             </div>
             <div className="card-content">
-              <h3 className="card-stat">Delivered Measurable ROI Across 4 Continents</h3>
+              <h3 className="card-stat">Global</h3>
+              <p className="card-label"> USA | Europe | Australia | India</p>
             </div>
           </div>
         </div>
@@ -134,7 +137,7 @@ const Hero = () => {
             onClick={handlePrimaryClick}
             style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
           >
-            Start your Transformation
+            Explore Our Advisory
             <FiArrowRight className="btn-icon" />
           </button>
         </div>

@@ -9,37 +9,35 @@ import img4 from "../../assets/imgg4.jpg";
 import img5 from "../../assets/imgg5.jpg";
 import img6 from "../../assets/imgg6.jpg";
 
-
-
 const services = [
   {
-    title: "Enterprise Technology Transformation",
-    desc: "Helping organizations modernize technology platforms and align digital capabilities with business strategy.",
+    pillar: "Reinvent",
+    quote: "Reimagine the enterprise to unlock exponential growth and enduring advantage.",
     image: img1,
   },
   {
-    title: "AI & Data Strategy",
-    desc: "Building data-driven organizations using AI & analytics.",
+    pillar: "Intelligence",
+    quote: "Harness AI and data to drive smarter decisions and measurable business outcomes.",
     image: img2,
   },
   {
-    title: "Digital Platform Strategy",
-    desc: "Designing scalable digital platforms for innovation.",
+    pillar: "Platforms",
+    quote: "Build scalable digital platforms that accelerate innovation and new value creation.",
     image: img3,
   },
   {
-    title: "Technology Operating Model Reinvention",
-    desc: "Improving structure & processes for better delivery.",
+    pillar: "Agility",
+    quote: "Enable speed, alignment, and execution excellence through modern operating models.",
     image: img4,
   },
   {
-    title: "Executive Transformation Advisory",
-    desc: "Helping leaders manage large tech transformations.",
+    pillar: "Trust",
+    quote: "Establish secure, resilient, and trusted digital foundations for sustainable growth.",
     image: img5,
   },
   {
-    title: "Cybersecurity & Risk Advisory",
-    desc: "Protecting digital assets by identifying risks, strengthening security frameworks, and ensuring regulatory compliance.",
+    pillar: "Leadership",
+    quote: "Empower leadership to make bold decisions and deliver transformation at scale.",
     image: img6,
   },
 ];
@@ -104,17 +102,17 @@ function AdvisoryServices() {
 
   return (
     <section id="service" className="services-section" ref={sectionRef}>
-      <h2 className="services-title">Advisory Focus Areas</h2>
+      <h2 className="services-title">BaiRees Advisory Pillars</h2>
 
       <div className="services-grid" role="list">
         {services.map((service, index) => (
           <article
             className="service-card"
-            key={service.title}
+            key={service.pillar}
             ref={(el) => (cardsRef.current[index] = el)}
             role="listitem"
             tabIndex={0}
-            aria-label={service.title}
+            aria-label={service.pillar}
           >
             <div className="card-image-layer">
               <img
@@ -127,12 +125,12 @@ function AdvisoryServices() {
             </div>
 
             <div className="card-title-on-image" aria-hidden="true">
-              <h3>{service.title}</h3>
+              <h3>{service.pillar}</h3>
             </div>
 
             <div className="card-hover-content">
-              <h3>{service.title}</h3>
-              <p>{service.desc}</p>
+              <h3>{service.pillar}</h3>
+              <p>{service.quote}</p>
             </div>
           </article>
         ))}

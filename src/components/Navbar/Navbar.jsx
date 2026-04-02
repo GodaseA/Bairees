@@ -63,12 +63,8 @@ const Navbar = ({ setSidebarOpen }) => {
       className={`navbar ${isVisible ? "navbar-visible" : "navbar-hidden"}`} 
       ref={navbarRef}
     >
-      {/* Left: Menu + Logo */}
+      {/* Left: Logo */}
       <div className="nav-left">
-        {/* <button className="menu-btn" onClick={handleMenuClick} aria-label="Open menu">
-          <FaBars />
-        </button> */}
-
         <a href="/" className="nav-logo">
           <img src={logo} alt="BaiRees Global Advisory" />
         </a>
@@ -77,8 +73,9 @@ const Navbar = ({ setSidebarOpen }) => {
       {/* Center: Brand Title (Gold) */}
       <div className="nav-center">
         <a href="/" className="nav-brand">
-          <h2>BaiRees</h2>
+          <h2>BAIREES</h2>
           <h3>Global Technology Advisory</h3>
+          <p className="nav-tagline">Powered by the BaiRees 7R Transformation Framework™</p>
         </a>
       </div>
 

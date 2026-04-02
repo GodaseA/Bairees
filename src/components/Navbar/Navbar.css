@@ -86,7 +86,7 @@
 
 /* Gold hover effect on logo */
 .nav-logo:hover {
-  border-color: #FFD700;
+  border-color: #C6A75E;
   box-shadow: 
     0 0 30px rgba(255, 215, 0, 0.6),
     0 0 60px rgba(255, 215, 0, 0.3),
@@ -114,17 +114,74 @@
 }
 
 .nav-brand h2 {
-  font-family: 'Cinzel', serif;
+  /* font-family: 'Cinzel', serif; */
+  font-family: Playfair D;
   font-size: 2.4rem;
   font-weight: 700;
-  color: #FFD700;
+  /* color: #FFD700; */
+  color: #C6A75E;
+  /* color:  #A8842F; */
   margin: 0;
   letter-spacing: 0.08em;
-  text-shadow: 
+  /* text-shadow: 
     0 2px 15px rgba(255, 215, 0, 0.4),
     0 0 30px rgba(255, 215, 0, 0.2);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; */
 }
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+h2.bairees-exact {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 72px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+
+  /* Antique gold metal gradient (top shine → dark bottom) */
+  background: linear-gradient(
+    180deg,
+    #fff6cc 0%,     /* top light reflection */
+    #f1d27a 12%,
+    #caa03a 30%,
+    #9c7422 55%,
+    #6e4f15 78%,    /* deep shadow gold */
+    #3f2d0c 100%    /* bottom dark */
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Emboss / depth */
+  text-shadow:
+    0 2px 0 #3b2a0b,
+    0 4px 8px rgba(0,0,0,0.6),
+    0 10px 18px rgba(0,0,0,0.55);
+
+  display: inline-block;
+}
+
+body{
+  background: radial-gradient(circle at top, #0b132b, #05070f 70%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .nav-brand h3 {
   font-family: 'DM Sans', sans-serif;
@@ -154,7 +211,7 @@
 
 .contact-btn {
   padding: 16px 40px;
-  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  background: #C6A75E;
   border: none;
   border-radius: 12px;
   font-family: 'DM Sans', sans-serif;
@@ -169,7 +226,7 @@
 }
 
 .contact-btn:hover {
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  /* background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); */
   color: #0B0F2B;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 
@@ -258,5 +315,51 @@
   .contact-btn {
     padding: 12px 20px;
     font-size: 0.85rem;
+  }
+}
+
+
+
+/* ── Tagline Styling ── */
+.nav-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #C6A75E;
+  margin: 6px 0 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-align: center;
+  opacity: 0.9;
+  text-shadow: 0 2px 10px rgba(198, 167, 94, 0.3);
+}
+
+/* Adjust nav-center height if needed */
+.nav-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-tagline {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-tagline {
+    display: none; /* Hide on very small screens if needed */
   }
 }

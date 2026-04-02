@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { FaExclamationTriangle, FaChartLine, FaMoneyBillWave, FaLink, FaCheckCircle } from "react-icons/fa";
+import { FaExclamationTriangle, FaChartLine, FaMoneyBillWave, FaCheckCircle, FaArrowRight } from "react-icons/fa";
 import "./EmotionalHook.css";
 
 const EmotionalHook = () => {
@@ -18,7 +18,7 @@ const EmotionalHook = () => {
         opacity: 0,
         duration: 0.8,
       })
-      // Animate problems list - fixed animation
+      // Animate problems list
       .from(
         problemRefs.current,
         {
@@ -26,7 +26,7 @@ const EmotionalHook = () => {
           opacity: 0,
           duration: 0.7,
           stagger: 0.15,
-          clearProps: "opacity", // Clear opacity after animation
+          clearProps: "opacity",
         },
         "-=0.4"
       )
@@ -48,15 +48,15 @@ const EmotionalHook = () => {
   const problems = [
     {
       icon: <FaChartLine />,
-      text: "AI & Digital Initiatives lack clear ROI",
+      text: "AI investments fail to deliver ROI",
     },
     {
       icon: <FaMoneyBillWave />,
-      text: "Transformation programs stall or overrun budgets",
+      text: "Programs exceed budgets by 40%",
     },
     {
-      icon: <FaLink />,
-      text: "Technology decisions are disconnected from business outcomes",
+      icon: <FaExclamationTriangle />,
+      text: "Tech decisions lack business alignment",
     },
   ];
 
@@ -64,14 +64,15 @@ const EmotionalHook = () => {
     <section className="hook-section" ref={sectionRef}>
       <div className="hook-container">
         
-        {/* Left Side - Problems */}
+        {/* Left Side - Pain Points */}
         <div className="problems-side">
           <div className="hook-header">
             <h2 className="section-title">
-              The <span className="gradient-text">Hard Truth</span>
+              Billions Spent on Technology.<br />
+              <span className="gradient-text">Value Still Missing.</span>
             </h2>
             <p className="section-subtitle">
-              Most enterprises invest heavily in technology—but fail to realize business value.
+              We ensure every transformation delivers measurable ROI and business outcomes.
             </p>
           </div>
 
@@ -81,7 +82,7 @@ const EmotionalHook = () => {
                 key={index}
                 className="problem-item"
                 ref={(el) => (problemRefs.current[index] = el)}
-                style={{ opacity: 1, visibility: 'visible' }} // Force visibility
+                style={{ opacity: 1, visibility: 'visible' }}
               >
                 <div className="problem-icon">
                   <FaExclamationTriangle />
@@ -102,18 +103,24 @@ const EmotionalHook = () => {
               <FaCheckCircle className="solution-icon" />
             </div>
             <h3 className="solution-title">
-              We Solve This Gap
+              The BaiRees Difference
             </h3>
             <p className="solution-text">
-              BaiRees bridges the divide between technology investments and 
-              measurable business outcomes. We ensure every digital initiative 
-              delivers <strong className="highlight">real ROI</strong>, stays 
-              on <strong className="highlight">budget</strong>, and drives 
-              <strong className="highlight">enterprise value</strong>.
+              BaiRees transforms technology investments into measurable business impact through{" "}
+              <strong className="highlight">Outcome-Led Transformation™</strong>.
             </p>
-            <div className="solution-cta">
-              <span>Ready to transform?</span>
-              <div className="arrow-down">↓</div>
+            
+            <button className="solution-cta-button">
+              Get Your Transformation Diagnostic
+              <FaArrowRight className="cta-icon" />
+            </button>
+
+            <div className="authority-strip">
+              <span>30+ Years</span>
+              <span className="divider">|</span>
+              <span>Fortune 500 Experience</span>
+              <span className="divider">|</span>
+              <span>Global Delivery Leadership</span>
             </div>
           </div>
         </div>

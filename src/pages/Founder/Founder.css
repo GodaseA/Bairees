@@ -1,8 +1,11 @@
-
 /* ═══════════════════════════════════════════════════════════
    FOUNDER HOME SECTION
+   Color Palette: #C6A75E · White · #0B0F2B
+   Font: Montserrat SemiBold (600)
 ═══════════════════════════════════════════════════════════ */
+
 .founder-home-section {
+  font-family: 'Montserrat', sans-serif;
   padding: 100px 24px;
   background: rgba(11, 15, 43, 0.4);
 }
@@ -20,7 +23,7 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(198, 167, 94, 0.3);
 }
 
 .founder-home-image img {
@@ -40,28 +43,30 @@
 }
 
 .founder-home-title {
-  font-family: 'Cinzel', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
   margin-bottom: 20px;
   line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
 .founder-name {
-  font-family: 'Cinzel', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-  font-weight: 700;
-  color: #FFD700;
+  font-weight: 600;
+  color: #C6A75E;
   margin-bottom: 8px;
+  letter-spacing: 0.02em;
 }
 
 .founder-role {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 25px;
-  font-weight: 500;
 }
 
 .founder-credentials {
@@ -71,8 +76,9 @@
 }
 
 .founder-credentials li {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 12px;
   padding-left: 28px;
@@ -84,14 +90,14 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #FFD700;
-  font-weight: 700;
+  color: #C6A75E;
+  font-weight: 600;
   font-size: 1.1rem;
 }
 
 .founder-quote {
-  background: rgba(212, 175, 55, 0.1);
-  border-left: 4px solid #D4AF37;
+  background: rgba(198, 167, 94, 0.1);
+  border-left: 4px solid #C6A75E;
   padding: 25px 30px;
   margin: 30px 0;
   border-radius: 0 12px 12px 0;
@@ -99,16 +105,78 @@
 
 .quote-icon {
   font-size: 1.8rem;
-  color: #FFD700;
+  color: #C6A75E;
   margin-bottom: 15px;
   opacity: 0.7;
 }
 
 .founder-quote p {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.25rem;
-  font-style: italic;
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
   line-height: 1.7;
   margin: 0;
+  font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 968px) {
+  .founder-home-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .founder-home-image {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .founder-home-section {
+    padding: 80px 20px;
+  }
+
+  .founder-home-title {
+    font-size: 2rem;
+  }
+
+  .founder-name {
+    font-size: 1.8rem;
+  }
+
+  .founder-role {
+    font-size: 1rem;
+  }
+
+  .founder-quote {
+    padding: 20px 24px;
+  }
+
+  .founder-quote p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .founder-home-section {
+    padding: 60px 16px;
+  }
+
+  .founder-home-title {
+    font-size: 1.8rem;
+  }
+
+  .founder-name {
+    font-size: 1.6rem;
+  }
+
+  .founder-credentials li {
+    font-size: 0.95rem;
+  }
+
+  .founder-quote p {
+    font-size: 1.05rem;
+  }
 }
