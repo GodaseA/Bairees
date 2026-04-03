@@ -32,7 +32,7 @@ const WhyBaiRees = () => {
       <div className="container">
         {/* Header */}
         <div className="why-header">
-          <h2 className="why-section-title">
+          <h2 className="section-title">
             Why <span className="gold-gradient">BaiRees</span>
           </h2>
           <p className="section-subtitle">

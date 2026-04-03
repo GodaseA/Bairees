@@ -1,11 +1,9 @@
 /* ═══════════════════════════════════════════════════════════
    BAIREES Global Advisory — OurImpact.css
-   Color Palette: #C6A75E · White · #0B0F2B
-   Font: Montserrat SemiBold (600)
+   Color Palette: Metallic Gold · White · #0B0F2B
 ═══════════════════════════════════════════════════════════ */
 
 .impact-section {
-  font-family: 'Montserrat', sans-serif;
   position: relative;
   padding: 120px 24px;
   min-height: 100vh;
@@ -55,26 +53,26 @@
 }
 
 .section-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cinzel', serif;
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 600;
+  font-weight: 700;
   color: #ffffff;
   margin: 0 0 20px 0;
   letter-spacing: 0.02em;
 }
 
 .section-title .gold-gradient {
-  background: linear-gradient(135deg, #C6A75E 0%, #D4B978 50%, #E0C68A 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #F2D492 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 4px 30px rgba(198, 167, 94, 0.5);
+  text-shadow: 0 4px 30px rgba(212, 175, 55, 0.5);
 }
 
 .section-subtitle {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: clamp(1.1rem, 2vw, 1.35rem);
-  font-weight: 600;
+  font-weight: 300;
   color: rgba(255, 255, 255, 0.92);
   max-width: 600px;
   margin: 0 auto;
@@ -92,7 +90,7 @@
 
 .impact-card {
   background: rgba(11, 15, 43, 0.7);
-  border: 1px solid rgba(198, 167, 94, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.35);
   border-radius: 16px;
   padding: 40px 32px;
   backdrop-filter: blur(16px);
@@ -105,9 +103,9 @@
 
 .impact-card:hover {
   transform: translateY(-8px) scale(1.03);
-  border-color: #C6A75E;
-  box-shadow: 0 20px 60px rgba(198, 167, 94, 0.35),
-              inset 0 0 40px rgba(198, 167, 94, 0.08);
+  border-color: #D4AF37;
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.35),
+              inset 0 0 40px rgba(212, 175, 55, 0.08);
   background: rgba(11, 15, 43, 0.85);
 }
 
@@ -118,27 +116,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 4px 15px rgba(198, 167, 94, 0.5));
+  filter: drop-shadow(0 4px 15px rgba(212, 175, 55, 0.5));
 }
 
 /* ── Stat ── */
 .impact-stat {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cinzel', serif;
   font-size: 2.2rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, #C6A75E 0%, #D4B978 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 4px 20px rgba(198, 167, 94, 0.4);
+  text-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
 }
 
 /* ── Label ── */
 .impact-label {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.95rem;
-  font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);

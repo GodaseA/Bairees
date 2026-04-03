@@ -10,25 +10,25 @@ const OurImpact = () => {
       icon: <FaChartLine />,
       stat: "20–40%",
       label: "Improvement in Operational Efficiency",
-      color: "#C6A75E",
+      color: "#FFD700",
     },
     {
       icon: <FaDollarSign />,
       stat: "Multi-Million $",
       label: "Cost Optimization Programs Delivered",
-      color: "#C6A75E",
+      color: "#D4AF37",
     },
     {
       icon: <FaRocket />,
       stat: "30–50%",
       label: "Faster Digital Initiative Execution",
-      color: "#C6A75E",
+      color: "#F2D492",
     },
     {
       icon: <FaSyncAlt />,
       stat: "100%",
       label: "Transformation Recovery for Failing Programs",
-      color: "#C6A75E",
+      color: "#FFD700",
     },
   ];
 

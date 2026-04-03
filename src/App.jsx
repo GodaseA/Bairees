@@ -53,17 +53,17 @@ const App = () => {
       <Sidebar />
       <Hero />
       <AdvisoryServices />
-      {/* <Architecture /> */}
+      <Architecture />
       <EmotionalHook />
       {/* <About /> */}
-      <SevenRMethodology />
+      <SevenRMethodology/>
       <WhyBaiRees />
       <OurImpact />
       <WhoWeWorkWith />
-      <Founder />
+            <Founder />
       <Contact />
       <Footer />
-      {/* <StrategyCallButton /> */}
+      <StrategyCallButton/>
 
 
       {/* <ContactPopup

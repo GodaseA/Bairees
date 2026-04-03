@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { FaExclamationTriangle, FaChartLine, FaMoneyBillWave, FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import { FaExclamationTriangle, FaChartLine, FaMoneyBillWave, FaLink, FaCheckCircle } from "react-icons/fa";
 import "./EmotionalHook.css";
 
 const EmotionalHook = () => {
@@ -18,7 +18,7 @@ const EmotionalHook = () => {
         opacity: 0,
         duration: 0.8,
       })
-      // Animate problems list
+      // Animate problems list - fixed animation
       .from(
         problemRefs.current,
         {
@@ -26,7 +26,7 @@ const EmotionalHook = () => {
           opacity: 0,
           duration: 0.7,
           stagger: 0.15,
-          clearProps: "opacity",
+          clearProps: "opacity", // Clear opacity after animation
         },
         "-=0.4"
       )
@@ -48,15 +48,15 @@ const EmotionalHook = () => {
   const problems = [
     {
       icon: <FaChartLine />,
-      text: "AI investments fail to deliver ROI",
+      text: "AI & Digital Initiatives lack clear ROI",
     },
     {
       icon: <FaMoneyBillWave />,
-      text: "Programs exceed budgets by 40%",
+      text: "Transformation programs stall or overrun budgets",
     },
     {
-      icon: <FaExclamationTriangle />,
-      text: "Tech decisions lack business alignment",
+      icon: <FaLink />,
+      text: "Technology decisions are disconnected from business outcomes",
     },
   ];
 
@@ -64,15 +64,14 @@ const EmotionalHook = () => {
     <section className="hook-section" ref={sectionRef}>
       <div className="hook-container">
         
-        {/* Left Side - Pain Points */}
+        {/* Left Side - Problems */}
         <div className="problems-side">
           <div className="hook-header">
             <h2 className="section-title">
-              Billions Spent on Technology.<br />
-              <span className="gradient-text">Value Still Missing.</span>
+              The <span className="gradient-text">Hard Truth</span>
             </h2>
             <p className="section-subtitle">
-              We ensure every transformation delivers measurable ROI and business outcomes.
+              Most enterprises invest heavily in technology—but fail to realize business value.
             </p>
           </div>
 
@@ -82,7 +81,7 @@ const EmotionalHook = () => {
                 key={index}
                 className="problem-item"
                 ref={(el) => (problemRefs.current[index] = el)}
-                style={{ opacity: 1, visibility: 'visible' }}
+                style={{ opacity: 1, visibility: 'visible' }} // Force visibility
               >
                 <div className="problem-icon">
                   <FaExclamationTriangle />
@@ -103,24 +102,18 @@ const EmotionalHook = () => {
               <FaCheckCircle className="solution-icon" />
             </div>
             <h3 className="solution-title">
-              The BaiRees Difference
+              We Solve This Gap
             </h3>
             <p className="solution-text">
-              BaiRees transforms technology investments into measurable business impact through{" "}
-              <strong className="highlight">Outcome-Led Transformation™</strong>.
+              BaiRees bridges the divide between technology investments and 
+              measurable business outcomes. We ensure every digital initiative 
+              delivers <strong className="highlight">real ROI</strong>, stays 
+              on <strong className="highlight">budget</strong>, and drives 
+              <strong className="highlight">enterprise value</strong>.
             </p>
-            
-            <button className="solution-cta-button">
-              Get Your Transformation Diagnostic
-              <FaArrowRight className="cta-icon" />
-            </button>
-
-            <div className="authority-strip">
-              <span>30+ Years</span>
-              <span className="divider">|</span>
-              <span>Fortune 500 Experience</span>
-              <span className="divider">|</span>
-              <span>Global Delivery Leadership</span>
+            <div className="solution-cta">
+              <span>Ready to transform?</span>
+              <div className="arrow-down">↓</div>
             </div>
           </div>
         </div>
